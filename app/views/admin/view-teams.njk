@@ -1,0 +1,20 @@
+{% extends "nunjucks/templates/main.njk" %}
+
+{% block pageTitle %}Admin View Teams{% endblock %}
+
+{% block content %}
+<div>
+    <div class="santa-wrapper"></div>
+    <div class="christmas-message-wrapper">
+        <h1>View teams!</h1>
+        {% for key, value in teams %}
+            <div class="team-wrapper">
+                <h2 class="team-heading">{{ key }}</h2>
+                {% for member in value %}
+                    <p class="team-p">{{ member }}</p>
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

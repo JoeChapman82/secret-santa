@@ -1,0 +1,43 @@
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    font-family: $font-family;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    background-image: url('/images/christmas-border-2.png');
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    position: relative;
+    flex: auto;
+    background-color: $redTrans;
+    width: 1024px;
+    max-width: 100%;
+    margin: 0 auto;
+    border-radius: 15px;
+    margin-bottom: 50px;
+    padding: 1rem;
+    border: 3px solid $red;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>&#127876;Secret Santa - {% block pageTitle %}{% endblock %} &#127876;</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/images/favicon.ico" type="image/x-icon" />
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="/css/main.css">
+  </head>
+  <body>
+
+
+                {% include "nunjucks/partials/header.njk" %}
+                <main id="main">
+                    <canvas id="snowCanvas" class="overlay-canvas" width="400" height="200"></canvas>
+                    {% block content %}{% endblock %}
+                </main>
+                {% include "nunjucks/partials/footer.njk" %}
+
+        {% block scripts %}{% endblock %}
+
+    <script type="text/javascript" src="/scripts/main.js"></script>
+    <script src="/scripts/snow.js"></script>
+
+  </body>
+</html>

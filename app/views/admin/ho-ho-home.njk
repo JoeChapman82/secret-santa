@@ -1,0 +1,15 @@
+{% extends "nunjucks/templates/main.njk" %}
+
+{% block pageTitle %}Admin Ho Ho Home{% endblock %}
+
+{% block content %}
+<div>
+    <div class="santa-wrapper"></div>
+    <div class="christmas-message-wrapper">
+        <h1>Welcome home boss!</h1>
+        <a class="block" href="/admin/create-team">Create Team</a>
+        <a class="block" href="/admin/view-teams">View Teams</a>
+    </div>
+</div>
+{% endblock %}
+

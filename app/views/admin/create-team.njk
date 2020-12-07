@@ -1,0 +1,33 @@
+{% extends "nunjucks/templates/main.njk" %}
+
+{% block pageTitle %}Admin Create Team{% endblock %}
+
+{% block content %}
+<div>
+    <div class="santa-wrapper"></div>
+    <form action="/admin/create-team" method="POST">
+        <div class="christmas-form">
+            <fieldset>
+                <legend class="christmas-legend">Create team</legend>
+                <div>
+                    <label for="teamName">Team Name</label>
+                    <input id="teamName" name="teamName" type="text" placeholder="Enter team name">
+                </div>
+                <div>
+                    <label for="name">Names</label>
+                    <textarea id="names" name="names" type="text" placeholder="Enter the names" cols="30" rows="3"></textarea>
+                </div>
+                <div>
+                    <label for="passwords">Passwords</label>
+                    <textarea id="passwords" name="passwords" type="text" placeholder="Enter the passwords" cols="30" rows="3"></textarea>
+                </div>
+                <input type="hidden" name="_csrf" value="{{ _csrf }}">
+                <input class="christmas-button-1" type="submit" value="Send to Santa">
+                <a class="block form-home-link" href="/admin/ho-ho-home">Home</a>
+
+            </fieldset>
+        </div>
+
+    </form>
+</div>
+{% endblock %}

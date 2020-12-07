@@ -1,0 +1,40 @@
+::-webkit-input-placeholder {
+    font-family: $font-family;
+  }
+  ::-moz-placeholder {
+    font-family: $font-family;
+  }
+  :-ms-input-placeholder {
+    font-family: $font-family;
+  }
+  :-moz-placeholder {
+    font-family: $font-family;
+  }
+
+  a,
+  a:visited,
+  a:active,
+  a:link {
+    color: rgba(255, 255, 255, .8);
+  }
+
+  .christmas-message-p {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .christmas-text-block {
+    padding: 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .team-heading {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .team-p {
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+  }

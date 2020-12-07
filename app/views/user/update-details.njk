@@ -1,0 +1,29 @@
+{% extends "nunjucks/templates/main.njk" %}
+
+{% block pageTitle %}Update details{% endblock %}
+
+{% block content %}
+
+<div>
+    <div class="santa-wrapper"></div>
+    <form action="/user/update-details" method="POST">
+        <div class="christmas-form">
+            <fieldset>
+                <legend class="christmas-legend">Update your details</legend>
+                <div>
+                    <label for="newPassword">New password</label>
+                    <input id="newPassword" name="newPassword" type="password" placeholder="Choose a new password">
+                </div>
+                <div>
+                    <label for="address">Address</label>
+                    <textarea id="address" name="address" type="text" placeholder="Enter your address and you will get presents!" cols="30" rows="4"></textarea>
+                </div>
+                <input type="hidden" name="_csrf" value="{{ _csrf }}">
+                <input class="christmas-button-1" type="submit" value="Send to Santa">
+            </fieldset>
+        </div>
+    </form>
+</div>
+
+{% endblock %}
+

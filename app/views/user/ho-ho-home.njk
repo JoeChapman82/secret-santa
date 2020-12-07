@@ -1,0 +1,41 @@
+{% extends "nunjucks/templates/main.njk" %}
+
+{% block pageTitle %}Ho Ho Home{% endblock %}
+
+{% block content %}
+<div>
+    {% set names = userToken.username.split(" ") %}
+    <div class="santa-wrapper"></div>
+    <div class="christmas-message-wrapper">
+    <h1>Welcome ho ho home, {{ names[0] }}</h1>
+    {% if hasPicked %}
+        <h1>Here's your secret santa details</h1>
+        <div class="secret-santa-details">
+            {% set secretSantaNames = secretSantaDetails.username.split(" ") %}
+                <p class="christmas-message-p">{{ secretSantaDetails.username }}</p>
+            {% if secretSantaDetails.address %}
+                <p class="christmas-message-p">{{ secretSantaDetails.address }}</p>
+            {% else %}
+                <p class="christmas-message-p">{{ secretSantaNames[0] }} hasn't provided their address yet. :(.</p>
+            {% endif %}
+        </div>
+    {% else %}
+        <form action="/user/ho-ho-home" method="POST">
+            <div class="christmas-message-wrapper">
+                <div class="christmas-text-block">
+                    <p class="christmas-message-p">Due to intercontinental travel restrictions this year,
+                        Santa's going to have a hard time getting presents to all the good boys and girls of the world :(.
+                    </p>
+                    <p class="christmas-message-p">You can help him out by choosing one person to give a present to.</p>
+                    <p class="christmas-message-p">All you have to do is reach into Santa's magical sack and pull out a name.</p>
+                </div>
+
+                <input type="hidden" name="_csrf" value="{{ _csrf }}">
+                <input class="christmas-button-1" type="submit" value="Reach into Santa's sack">
+            </div>
+        </form>
+    {% endif %}
+    </div>
+</div>
+{% endblock %}
+

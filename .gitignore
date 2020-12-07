@@ -1,0 +1,8 @@
+.DS_Store
+node_modules/*
+.jshintrc
+.editorconfig
+.nyc_output
+/.env
+/.env.testing
+/ecosystem.config.js

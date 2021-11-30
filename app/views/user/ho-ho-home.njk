@@ -7,7 +7,7 @@
     {% set names = userToken.username.split(" ") %}
     <div class="santa-wrapper"></div>
     <div class="christmas-message-wrapper">
-    <h1>Welcome ho ho home, {{ names[0] }}</h1>
+    <h1>Welcome ho ho home, {{ names[0] }}, beloved member of {{ userToken.team }}</h1>
     {% if hasPicked %}
         <h1>Here's your secret santa details</h1>
         <div class="secret-santa-details">
@@ -23,7 +23,7 @@
         <form action="/user/ho-ho-home" method="POST">
             <div class="christmas-message-wrapper">
                 <div class="christmas-text-block">
-                    <p class="christmas-message-p">Due to intercontinental travel restrictions this year,
+                    <p class="christmas-message-p">Due to Rudolf and Blitzen catching the omicron variant,
                         Santa's going to have a hard time getting presents to all the good boys and girls of the world :(.
                     </p>
                     <p class="christmas-message-p">You can help him out by choosing one person to give a present to.</p>

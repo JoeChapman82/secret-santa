@@ -20,7 +20,6 @@ module.exports = (app) => {
             let members = await findUsers.forTeamView(teamName);
             teams[teamName] = members.map((x) => x.username);
         }
-        console.log(teams);
         res.locals.teams = teams;
         return res.render('admin/view-teams');
     });
@@ -46,9 +45,8 @@ module.exports = (app) => {
         let user = await findUsers.toAuthenticate(res.locals.userToken.username);
         if(user.isSantaFor) {
             res.locals.hasPicked = true;
-            let secretSantaDetails = 
             res.locals.secretSantaDetails = await findUsers.forSanta(user.isSantaFor);
-            if(res.locals.secretSantaDetails.address) {
+            if(res.locals.secretSantaDetails?.address) {
                 res.locals.secretSantaDetails.address = decrypt(res.locals.secretSantaDetails.address);
             }
         } else {
@@ -86,7 +84,7 @@ module.exports = (app) => {
         try {
             const hash = await bcrypt.hash(req.body.newPassword, saltRounds);
             await updateUser.byId(res.locals.userToken.sub, {password: hash, address: encrypt(req.body.address), hasDefaultPassword: false});
-            let claims = { sub: res.locals.userToken.sub, iss: process.env.JWT_ISSUER_URL, permissions: res.locals.userToken.permissions, username: res.locals.userToken.username, hasDefaultPassword: false };
+            let claims = { sub: res.locals.userToken.sub, iss: process.env.JWT_ISSUER_URL, permissions: res.locals.userToken.permissions, username: res.locals.userToken.username, hasDefaultPassword: false, team: res.locals.userToken.team };
             const createdToken = jwt.sign(claims, process.env.JWT_SECRET, {
                 expiresIn: config.session.cookieLifespan
             });

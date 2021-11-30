@@ -34,7 +34,7 @@ module.exports = (app) => {
                     } else {
                         const isMatching = await bcrypt.compare(req.body.password, user.password);
                         if(isMatching) {
-                            let claims = { sub: user._id, iss: process.env.JWT_ISSUER_URL, permissions: user.role, username: user.username, hasDefaultPassword: user.hasDefaultPassword };
+                            let claims = { sub: user._id, iss: process.env.JWT_ISSUER_URL, permissions: user.role, username: user.username, hasDefaultPassword: user.hasDefaultPassword, team: user.team };
                             const createdToken = jwt.sign(claims, process.env.JWT_SECRET, {
                                 expiresIn: config.session.cookieLifespan
                             });

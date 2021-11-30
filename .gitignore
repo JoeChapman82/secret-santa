@@ -6,3 +6,4 @@ node_modules/*
 /.env
 /.env.testing
 /ecosystem.config.js
+/dev/certs

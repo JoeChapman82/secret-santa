@@ -1,0 +1,18 @@
+.santa-gave-a-cookie-wrapper {
+    position: fixed;
+    top: 10px;
+    left: calc(100% - 275px);
+    border: 5px solid $green2;
+    border-radius: 5px;
+    background-color: $red;
+    width: 250px;
+    text-align: center;
+    z-index: 10;
+    padding: 1rem;
+}
+
+.santa-gave-a-cookie-image-wrapper {
+    width: 100%;
+    text-align: center;
+    margin-top: 1rem;
+}

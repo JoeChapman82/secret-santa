@@ -1,3 +1,12 @@
 <footer>
-    <p>&#127876;Created by Santa for the Department for Elves and Reindeer&#127876;</p>
+    <div class="footer-wrapper">
+        <p>&#127876;Created by Santa for the Department for Elves and Reindeer&#127876;</p>
+    </div>
+    {% if userToken %}
+    <div class="footer-links-wrapper">
+        <a class="christmas-footer-link" href="/user/cookie-preferences">Cookie preferences</a>
+        <a class="christmas-footer-link" href="/user/contact-us">Contact us</a>
+        <a class="christmas-footer-link" href="/user/privacy-policy">Privacy policy</a>
+    <div>
+    {% endif %}
 </footer>

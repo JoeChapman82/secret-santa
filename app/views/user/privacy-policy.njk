@@ -1,0 +1,23 @@
+{% extends "nunjucks/templates/main.njk" %}
+
+{% block pageTitle %}Privacy policy{% endblock %}
+
+{% block content %}
+<div>
+    {% set names = userToken.username.split(" ") %}
+    <div class="santa-wrapper"></div>
+    <div class="christmas-message-wrapper">
+    <h1 class="christmas-heading-one">Greetings, {{ names[0] }}.</h1>
+        <h2 class="christmas-heading-two">So you want to know about privacy?</h2>
+        <p class="christmas-message-p">If it's privacy you're wanting, perhaps you've come to the wrong place.</p>
+        <p class="christmas-message-p">The truth is that Santa knows everything about you! He knows when you've been naughty
+         and he knows when you've been nice. He see's you when you're sleeping and he knows when you're awake 😳.</p>
+         <p class="christmas-message-p"> He achieves this
+          through an intricate network of elfs, that were looking for work following the automation of his workshop.</p>
+
+        <p class="christmas-message-p">Even worse, I've heard he doesn't respond to GDPR requests 😧</p>
+
+        <a class="christmas-home-link" href="/user/ho-ho-home">That was harrowing! Take me home!</a>
+    </div>
+</div>
+{% endblock %}

@@ -4,7 +4,7 @@ const unprotectedRoutes = require('../routes/unprotectedRoutes');
 const routes = require('../routes/routes');
 const authorisation = require('./authorisation/main');
 const roleAuthorisation = require('./authorisation/roleAuthorisation');
-
+const seenCookieHandler = require('./globals/seenCookieHandler');
 module.exports = (app) => {
     globals.helmet(app);
     globals.static(app);
@@ -18,6 +18,7 @@ module.exports = (app) => {
     globals.setCurrentYear(app);
     unprotectedRoutes(app);
     app.use(authorisation);
+    app.use(seenCookieHandler);
     app.all('/admin/*', roleAuthorisation.admin);
     app.all('/user/*', roleAuthorisation.user);
     routes(app);

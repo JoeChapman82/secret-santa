@@ -18,10 +18,24 @@
     color: rgba(255, 255, 255, .8);
   }
 
-  .christmas-message-p {
+  .christmas-heading-one {
+    font-size: 2.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .christmas-heading-two {
     font-size: 2rem;
     margin-bottom: 1rem;
   }
+
+  .christmas-message-p {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .christmas-message-small-p {
+    font-size: 1rem;
+  }    
 
   .christmas-text-block {
     padding: 1rem;

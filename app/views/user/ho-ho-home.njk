@@ -7,9 +7,9 @@
     {% set names = userToken.username.split(" ") %}
     <div class="santa-wrapper"></div>
     <div class="christmas-message-wrapper">
-    <h1>Welcome ho ho home, {{ names[0] }}, beloved member of {{ userToken.team }}</h1>
+    <h1  class="christmas-heading-one">Welcome ho ho home, {{ names[0] }}, beloved member of {{ userToken.team }}</h1>
     {% if hasPicked %}
-        <h1>Here's your secret santa details</h1>
+        <h2>Here's your secret santa details</h2>
         <div class="secret-santa-details">
             {% set secretSantaNames = secretSantaDetails.username.split(" ") %}
                 <p class="christmas-message-p">{{ secretSantaDetails.username }}</p>

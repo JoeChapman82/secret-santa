@@ -16,3 +16,31 @@
 .christmas-button-1:active {
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
 }
+
+.christmas-button-2 {
+    border-radius: 5px;
+    padding: .5rem;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
+    background-color: $yellow;
+    font-family: $font-family;
+    outline: none;
+    display: inline;
+    width: 100%;
+    margin: .25rem;
+}
+
+
+.christmas-button-2:hover {
+    background-color: darken($yellow, 10%);
+    cursor: pointer;
+}
+
+.christmas-button-2:active {
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+}
+
+.cookie-button-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

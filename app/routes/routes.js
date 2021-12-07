@@ -96,6 +96,11 @@ module.exports = (app) => {
         }
 
     });
+    app.get('/user/contact-us', (req, res) => res.render('user/contact-us'));
+    app.get('/user/cookie-preferences', (req, res) => res.render('user/cookie-preferences'));
+    app.get('/user/privacy-policy', (req, res) => res.render('user/privacy-policy'));
+
+
     app.get('/errors/404', (req, res) => res.render('errors/not-found'));
     app.get('/errors/gone-wrong', (req, res) => res.render('errors/gone-wrong'));
     app.all('*', (req, res) => res.redirect('/errors/404'));

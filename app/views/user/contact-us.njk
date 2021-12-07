@@ -1,0 +1,22 @@
+{% extends "nunjucks/templates/main.njk" %}
+
+{% block pageTitle %}Contact us{% endblock %}
+
+{% block content %}
+<div>
+    {% set names = userToken.username.split(" ") %}
+    <div class="santa-wrapper"></div>
+    <div class="christmas-message-wrapper">
+    <h1 class="christmas-heading-one">Greetings, {{ names[0] }}.</h1>
+        <h2 class="christmas-heading-two">Are you wanting to send a message to Santa? You can send him a letter here</h2>
+            <div class="secret-santa-details santa-address-wrapper">
+                <p>Santa/Father Christmas</p>
+                <p>Santa’s Grotto</p>
+                <p>Reindeerland</p>
+                <p>XM4 5HQ</p>
+            </div>
+        <a class="christmas-home-link" href="/user/ho-ho-home">Go back home. Protect the NHS. Save lives!</a>
+    </div>
+</div>
+{% endblock %}
+

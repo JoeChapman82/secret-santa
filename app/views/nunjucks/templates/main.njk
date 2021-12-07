@@ -9,11 +9,25 @@
         <link rel="stylesheet" href="/css/main.css">
   </head>
   <body>
-
+        {% if userToken and showCookieMessage %}
+            <div id="cookieMessage" class="santa-gave-a-cookie-wrapper">
+                 <div class="santa-gave-a-cookie-image-wrapper">
+                    <img class="santa-gave-a-cookie-image" src="/images/cookie.png" alt="" width=50 height="50">
+                 </div>
+                 <h2 class="christmas-message-p">You got a cookie!</h2>
+                <p class="christmas-message-small-p">Cookies are like pokemon</p>
+                <div class="cookie-button-wrapper">
+                    <input id="cookieButton" class="christmas-button-2" type="button" value="Ok">
+                    <input id="cookieButton2" class="christmas-button-2" type="button" value="Thanks!">
+                </div>
+            </div>
+        {% endif %}
 
                 {% include "nunjucks/partials/header.njk" %}
                 <main id="main">
                     <canvas id="snowCanvas" class="overlay-canvas" width="400" height="200"></canvas>
+
+
                     {% block content %}{% endblock %}
                 </main>
                 {% include "nunjucks/partials/footer.njk" %}
